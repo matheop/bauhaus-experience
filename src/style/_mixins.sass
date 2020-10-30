@@ -1,0 +1,123 @@
+// ┌─┐┌─┐┌┐┌┌─┐┬─┐┌─┐┬  
+// │ ┬├┤ │││├┤ ├┬┘├─┤│  
+// └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
+
+/* ---- Fonctions Min && Max ---- */
+@function max($numbers...)
+    @return m#{a}x(#{$numbers})
+
+@function min($numbers...)
+    @return m#{i}n(#{$numbers})
+
+/* ---- Couleur avec degré d'opacité ---- */
+@function opa($color, $opacity) // $color = rgb ou hexa && $opacity = 0 -> 1
+    @return rgba($color, $opacity)
+
+/* ---- MARGIN && PADDING ---- */
+
+// 1. Margin
+=mx($ml, $mr: false)
+    margin-left: $ml
+    @if $mr
+        margin-right: $mr
+    @else
+        margin-right: $ml
+
+=my($mt, $mb: false)
+    margin-top: $mt
+    @if $mb
+        margin-bottom: $mb
+    @else
+        margin-bottom: $mt
+
+// 2. Padding
+=px($pl, $pr: false)
+    padding-left: $pl
+    @if $pr
+        padding-right: $pr
+    @else
+        padding-right: $pl
+
+=py($pt, $pb: false)
+    padding-top: $pt
+    @if $pb
+        padding-bottom: $pb
+    @else
+        padding-bottom: $pt
+
+/* ---- FLEXBOX ---- */
+=flex
+    display: flex
+    justify-content: center
+    align-items: center
+
+=flex-x
+    display: flex
+    justify-content: center
+
+=flex-y
+    display: flex
+    align-items: center
+
+/* ---- BOUTONS ---- */
+
+// Bouton contenant un icon (svg...)
+=icon-btn($width, $ml: 0, $mr: 0)
+    display: flex
+    i
+        width: $width
+        margin: auto $mr auto $ml
+        display: flex
+
+// Bouton plein ou contours seulement
+=btn($bg, $txt, $rad: 50%, $border: $bg)
+    border-radius: $rad // ou s/m/l-radius
+    background: $bg
+    border: 1px solid $bg
+    color: $txt
+
+/* ---- Liens ---- */
+
+=basic-link($color: $white)
+    text-decoration: none
+    color: $color // TODO: Changer couleur
+    &:hover
+        text-decoration: underline
+
+// ┬ ┬┬  ┬┌─┬┌┬┐
+// │ ││  ├┴┐│ │ 
+// └─┘┴  ┴ ┴┴ ┴ 
+
+/* ---- OMBRES ---- */
+
+// TODO: adapter les pixels au projet
+=light-shadow($color: $light-grey)
+    box-shadow: 1px 1px 2px $color
+    -moz-box-shadow: 1px 1px 2px $color
+    -webkit-box-shadow: 1px 1px 2px $color
+
+=shadow($color: $light-grey)
+    box-shadow: 2px 2px 4px $color
+    -moz-box-shadow: 2px 2px 4px $color
+    -webkit-box-shadow: 2px 2px 4px $color
+
+=deep-shadow($color: $light-grey)
+    box-shadow: 4px 4px 8px $color
+    -moz-box-shadow: 4px 4px 8px $color
+    -webkit-box-shadow: 4px 4px 8px $color
+
+/* ---- BORDER-RADIUS ---- */
+// TODO: adapter les pixels au projet
+=s-radius
+    border-radius: 3px
+=m-radius
+    border-radius: 6px
+=l-radius
+    border-radius: 12px
+
+/* ---- Transitions ----*/
+=transition($str) // si transi sur plusieurs pptés,utiliser des ""
+    -webkit-transition: $str
+    -moz-transition: $str
+    -ms-transition: $str
+    transition: $str

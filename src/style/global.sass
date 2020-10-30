@@ -1,0 +1,30 @@
+@import 'theme'
+@import 'reset'
+
+// icons
+
+i
+	font-style: normal
+
+	&.cross
+		&::before
+			content: "✕"
+
+// ┌┐ ┌─┐┬ ┬┌┬┐┌─┐┌┐┌┌─┐
+// ├┴┐│ ││ │ │ │ ││││└─┐
+// └─┘└─┘└─┘ ┴ └─┘┘└┘└─┘
+
+button
+	//TODO: adapter le padding
+	padding: 0.5rem 1.5rem
+	&:hover
+		+deep-shadow
+	//TODO: Changer le nom de la classe si besoin
+	&.primary-btn
+		+btn($primary, $white, $m-rad)
+		&:hover
+			+btn($p-dark, $white, $m-rad)
+		&.focus, &.active
+			+btn($p-light, $white, $m-rad)
+		&.disabled
+			+btn($p-transparent, $white, $m-rad)

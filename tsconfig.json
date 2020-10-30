@@ -1,0 +1,45 @@
+{
+	"extends": "@tsconfig/svelte/tsconfig.json",
+	"include": [
+		"src/**/*",
+		"src/node_modules/**/*"
+	],
+	"exclude": [
+		"node_modules/*",
+		"__sapper__/*",
+		"static/*"
+	],
+	"display": "Svelte",
+	"compilerOptions": {
+		"lib": [
+			"DOM",
+			"ES2017",
+			"WebWorker"
+		],
+		"isolatedModules": false,
+		"baseUrl": "./src/",
+		"paths": {
+			"components": [
+				"components"
+			],
+			"svg": [
+				"components/svg"
+			],
+			"ui": [
+				"components/ui"
+			],
+			"kit": [
+				"components/ui/kit"
+			],
+			"stores": [
+				"stores"
+			],
+			"helpers": [
+				"helpers"
+			],
+			"notifications": [
+				"stores/notifications"
+			]
+		}
+	}
+}
