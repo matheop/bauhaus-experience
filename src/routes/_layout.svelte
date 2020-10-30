@@ -20,15 +20,14 @@
 	<LoadingPage />
 {/if}
 
-<Header />
-<Notifications />
+<!-- <Header />
+<Notifications /> -->
 
 <main>
 	<slot />
 </main>
 
-<Footer />
-
+<!-- <Footer /> -->
 <style lang="sass" global>
 	@import "../style/global.sass";
 </style>

@@ -16,6 +16,15 @@
 /* ---- MARGIN && PADDING ---- */
 
 // 1. Margin
+=mt($mt)
+    margin-top: $mt
+=mb($mb)
+    margin-bottom: $mb
+=ml($ml)
+    margin-left: $ml
+=mr($mr)
+    margin-right: $mr
+
 =mx($ml, $mr: false)
     margin-left: $ml
     @if $mr
@@ -31,6 +40,15 @@
         margin-bottom: $mt
 
 // 2. Padding
+=pt($pt)
+    margin-top: $pt
+=pb($pb)
+    margin-bottom: $pb
+=pl($pl)
+    margin-left: $pl
+=pr($pr)
+    margin-right: $pr
+
 =px($pl, $pr: false)
     padding-left: $pl
     @if $pr
@@ -73,12 +91,13 @@
 =btn($bg, $txt, $rad: 50%, $border: $bg)
     border-radius: $rad // ou s/m/l-radius
     background: $bg
-    border: 1px solid $bg
+    border: 1px solid $border
     color: $txt
+    transition: all 0.4s ease
 
 /* ---- Liens ---- */
 
-=basic-link($color: $white)
+=link-alike($color: $white)
     text-decoration: none
     color: $color // TODO: Changer couleur
     &:hover

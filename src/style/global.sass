@@ -1,6 +1,80 @@
 @import 'theme'
 @import 'reset'
 
+// ┌─┐┌─┐┌┐┌┌─┐┬─┐┌─┐┬
+// │ ┬├┤ │││├┤ ├┬┘├─┤│
+// └─┘└─┘┘└┘└─┘┴└─┴ ┴┴─┘
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	-ms-overflow-style: none
+	scrollbar-width: none
+
+*::-webkit-scrollbar
+	width: 0px
+	background: rgba(255, 255, 255, 0)
+
+input:focus, button:focus, select:focus
+	outline: none
+
+//preconf typo [rem]
+
+\:root
+	font-size: calc(50% + 0.45vw)
+
+html
+	line-height: 1.15
+	-webkit-text-size-adjust: 100%
+
+body
+	width: 100%
+	min-height: 100vh
+	height: 100%
+	font-family: "Karla"
+	-webkit-font-smoothing: antialiased
+	color: $primary
+	background: #E6D2AF
+
+select
+	+btn($primary, $white, $m-rad)
+	position: relative
+	min-width: 6rem
+	padding: 0.5rem
+	font-size: 0.9rem
+
+	&::-ms-expand
+		display: none
+
+/* Images et SVG */
+img
+	user-select: none
+	-ms-user-select: none
+	-moz-user-select: none
+	-webkit-user-select: none
+
+svg
+	width: calc(100% - 1px)
+	height: calc(100% - 1px)
+
+// ┌┬┐┬ ┬┌─┐┌─┐┌─┐
+//  │ └┬┘├─┘│ │└─┐
+//  ┴  ┴ ┴  └─┘└─┘
+
+h1
+	+h1
+h2
+	+h2
+h3
+	+h3
+h4
+	+h4
+h5,p
+	+h5
+h6
+	+h6
+
 // icons
 
 i
@@ -15,12 +89,19 @@ i
 // └─┘└─┘└─┘ ┴ └─┘┘└┘└─┘
 
 button
-	//TODO: adapter le padding
-	padding: 0.5rem 1.5rem
+	padding: 0.8rem 1.5rem
 	&:hover
 		+deep-shadow
-	//TODO: Changer le nom de la classe si besoin
-	&.primary-btn
+
+	// outlined-btn
+	&.p-outlined-btn
+		+btn(transparent, $primary, $m-rad, $primary)
+		&:hover
+			+btn($primary, $white, $m-rad, $primary)
+		&.focus, &.active
+			+btn($p-light, $white, $m-rad, $primary)
+
+	&.p-filled-btn
 		+btn($primary, $white, $m-rad)
 		&:hover
 			+btn($p-dark, $white, $m-rad)
