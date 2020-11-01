@@ -23,10 +23,17 @@
 		text-align: center
 
 		h1
-			color: $secondary
-			+mb(3rem)
+			color: $tertiary
+			text-shadow: $t-dark 1px 1px 2px
+			+mb(2rem)
 
 		h4
+			color: $secondary
 			font-style: italic
+			text-shadow: $s-dark 1px 1px 2px
 			+mb(4rem)
+
+		button
+			font-weight: bold
+
 </style>

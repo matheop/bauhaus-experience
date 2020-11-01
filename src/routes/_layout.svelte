@@ -29,5 +29,5 @@
 
 <!-- <Footer /> -->
 <style lang="sass" global>
-	@import "../style/global.sass";
+	@import "../style/global.sass"
 </style>
