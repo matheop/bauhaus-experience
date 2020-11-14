@@ -52,7 +52,7 @@
 			padding: 0.5rem 1rem
 			min-height: 3.5rem
 			width: 20rem
-			border-left: 4px solid $primary
+			border-left: 4px solid $prim
 
 			+shadow
 			+s-radius

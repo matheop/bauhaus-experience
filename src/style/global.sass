@@ -34,18 +34,8 @@ body
 	height: 100%
 	font-family: "Karla"
 	-webkit-font-smoothing: antialiased
-	color: $primary
-	background: #E6D2AF
-
-select
-	+btn($primary, $white, $m-rad)
-	position: relative
-	min-width: 6rem
-	padding: 0.5rem
-	font-size: 0.9rem
-
-	&::-ms-expand
-		display: none
+	color: $prim
+	background-color: $marine
 
 /* Images et SVG */
 img
@@ -96,53 +86,56 @@ button
 	/* -- PRIMARY -- */
 	// outlined
 	&.p-outlined-btn
-		+btn(transparent, $primary, $m-rad, $primary)
+		+btn(transparent, $prim, $m-rad, $prim)
 		&:hover
-			+btn($primary, $white, $m-rad, $primary)
+			+btn($prim, $white, $m-rad, $prim)
 		&.focus, &.active
-			+btn($p-light, $white, $m-rad, $primary)
+			+btn($p-l, $white, $m-rad, $prim)
 	// filled
 	&.p-filled-btn
-		+btn($primary, $white, $m-rad)
+		+btn($prim, $white, $m-rad)
 		&:hover
-			+btn($p-dark, $white, $m-rad)
+			+btn($p-d, $white, $m-rad)
 		&.focus, &.active
-			+btn($p-light, $white, $m-rad)
+			+btn($p-l, $white, $m-rad)
 		&.disabled
-			+btn($p-transparent, $white, $m-rad)
+			+btn($p-trans, $white, $m-rad)
 
-	/* -- SECONDARY -- */
+	/* -- sec -- */
 	// outlined
 	&.s-outlined-btn
-		+btn(transparent, $secondary, $m-rad, $secondary)
+		+btn(transparent, $sec, $m-rad, $sec)
 		&:hover
-			+btn($secondary, $white, $m-rad, $secondary)
+			+btn($sec, $white, $m-rad, $sec)
 		&.focus, &.active
-			+btn($s-light, $white, $m-rad, $secondary)
+			+btn($s-l, $white, $m-rad, $sec)
 	// filled
 	&.s-filled-btn
-		+btn($secondary, $white, $m-rad)
+		+btn($sec, $white, $m-rad)
 		&:hover
-			+btn($s-dark, $white, $m-rad)
+			+btn($s-d, $white, $m-rad)
 		&.focus, &.active
-			+btn($s-light, $white, $m-rad)
+			+btn($s-l, $white, $m-rad)
 		&.disabled
-			+btn($s-transparent, $white, $m-rad)
+			+btn($s-trans, $white, $m-rad)
 
 	/* -- TERTIARY -- */
 	// outlined
 	&.t-outlined-btn
-		+btn(transparent, $tertiary, $m-rad, $tertiary)
+		+btn(transparent, $ter, $m-rad, $ter)
 		&:hover
-			+btn($tertiary, $white, $m-rad, $tertiary)
+			+btn($ter, $white, $m-rad, $ter)
 		&.focus, &.active
-			+btn($t-light, $white, $m-rad, $tertiary)
+			+btn($t-l, $white, $m-rad, $ter)
 	// filled
 	&.t-filled-btn
-		+btn($tertiary, $white, $m-rad)
+		+btn($ter, $white, $m-rad)
 		&:hover
-			+btn($t-dark, $white, $m-rad)
+			+btn($t-d, $white, $m-rad)
 		&.focus, &.active
-			+btn($t-light, $white, $m-rad)
+			+btn($t-l, $white, $m-rad)
 		&.disabled
-			+btn($t-transparent, $white, $m-rad)
+			+btn($t-trans, $white, $m-rad)
+
+.circle
+	border-radius: 50%

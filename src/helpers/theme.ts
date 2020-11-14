@@ -7,12 +7,12 @@ export const pLight: string = "#7289FC";
 export const pTransparent: string = "#4D69FB66";
 
 export const sDark: string = "#FAD107";
-export const secondary: string = "#FBDE4B";
+export const sec: string = "#FBDE4B";
 export const sLight: string = "#FCE572";
 export const sTransparent: string = "#FBDE4B66";
 
 export const tDark: string = "#FA2F07";
-export const tertiary: string = "#FB684B";
+export const ter: string = "#FB684B";
 export const tLight: string = "#FC8972";
 export const tTransparent: string = "#FB684B66";
 

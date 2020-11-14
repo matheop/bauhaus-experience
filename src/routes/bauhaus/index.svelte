@@ -1,52 +1,47 @@
 <script lang="ts">
-	import { fade } from "svelte/transition";
+	import { mouse } from "stores/mousemove";
+
+	function handleMousemove(e) {
+		$mouse.x = e.clientX;
+		$mouse.y = e.clientY;
+	}
+
+	$: console.log("$mouse:", $mouse);
 </script>
 
-<div id="container" transition:fade>
-	<div class="rounded red" />
-	<div class="rounded blue">
-		<div class="rounded purple" />
+<nav onmousemove={handleMousemove}>
+	<div id="one" class="circle">
+		<div class="circle two">
+			<div class="circle three">
+				<div class="circle four" />
+			</div>
+		</div>
 	</div>
-</div>
+</nav>
 
 <style lang="sass">
-	#container
+    nav
         position: absolute
-        height: 45.5rem // circles height * 2 - intersection / 2
-        width: 26rem
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
 
-        .rounded
-            position: absolute
-            height: 26rem
-            width: 26rem
-            border-radius: 50%
-            &::after // for box-shadow
-                content: ""
-                display: block
-                height: 100%
-                width: 100%
-                border-radius: 2rem
-                +light-shadow($dark-grey)
+        #one
+            width: 32rem
+            height: 32rem
+            background-color: $p-d
 
-            &.blue
-                background-color: #65B0AA
-                overflow: hidden
-                .purple
-                    position: absolute
-                    top: 19.5rem
-                    background-color: #5E4188
-            &.red
-                bottom: 0
-                background-color: #D54927
+        .circle
+            padding: 4rem
 
-            // effects
-        // &:hover
-        //     .red, .blue
-        //         +light-shadow($dark-grey)
-        //         transition: all 0.4s ease
-                
+        .two
+            background-color: $prim
+
+            .three
+                background-color: $p-l
+
+                .four
+                    background-color: $s-l
+
 
 </style>
