@@ -1,5 +1,20 @@
 <script lang="ts">
+	/* Sapper */
+	import { goto } from "@sapper/app";
+	/* Svelte */
+	import { onMount } from "svelte";
+	import { fade } from "svelte/transition";
+	/* Stores */
 	import { mouse } from "stores/mousemove";
+	/* Helpers */
+	import { SHORT_DELAY } from "helpers/global";
+
+	import Seo from "components/templates/SEO.svelte";
+
+	let intro: boolean = false;
+	onMount(() => setTimeout(() => (intro = true), SHORT_DELAY));
+
+	const discover = async (str: string) => await goto(`/bauhaus/${str}`);
 
 	function handleMousemove(e) {
 		$mouse.x = e.clientX;
@@ -9,39 +24,130 @@
 	$: console.log("$mouse:", $mouse);
 </script>
 
-<nav onmousemove={handleMousemove}>
-	<div id="one" class="circle">
-		<div class="circle two">
-			<div class="circle three">
-				<div class="circle four" />
+<Seo
+	title="BVX | Menu"
+	description="A Bauhaus Visual Experience"
+	url="https://www.bauhaus.fun/bauhaus" />
+
+{#if intro}
+	<section id="grid-container">
+		<button
+			on:click={() => discover('one')}
+			in:fade={{ delay: 500, duration: 400 }}
+			out:fade={{ duration: 400 }}
+			id="btn-up-l"
+			class="s-outlined-btn">
+			??1??
+		</button>
+		<button
+			on:click={() => discover('two')}
+			in:fade={{ delay: 1000, duration: 400 }}
+			out:fade={{ delay: 200, duration: 400 }}
+			id="btn-up-r"
+			class="p-filled-btn">
+			??2??
+		</button>
+		<button
+			on:click={() => discover('three')}
+			in:fade={{ delay: 1500, duration: 400 }}
+			out:fade={{ delay: 400, duration: 400 }}
+			id="btn-mid-r"
+			class="t-outlined-btn">
+			??3??
+		</button>
+		<button
+			on:click={() => discover('four')}
+			in:fade={{ delay: 2000, duration: 400 }}
+			out:fade={{ delay: 600, duration: 400 }}
+			id="btn-down-r"
+			class="s-filled-btn">
+			??4??
+		</button>
+		<button
+			on:click={() => discover('five')}
+			in:fade={{ delay: 2500, duration: 400 }}
+			out:fade={{ delay: 800, duration: 400 }}
+			id="btn-down-l"
+			class="p-outlined-btn">
+			??5??
+		</button>
+		<button
+			on:click={() => discover('six')}
+			in:fade={{ delay: 3000, duration: 400 }}
+			out:fade={{ delay: 1000, duration: 400 }}
+			id="btn-mid-l"
+			class="t-filled-btn">
+			??6??
+		</button>
+
+		<nav in:fade={{ duration: 3500 }} out:fade on:mousemove={handleMousemove}>
+			<div id="one" class="circle">
+				<div class="circle two">
+					<div class="circle three">
+						<div class="circle four" />
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
-</nav>
+		</nav>
+	</section>
+{/if}
 
 <style lang="sass">
+    #grid-container
+        display: grid
+        grid-template-columns: repeat(2, 1fr) repeat(2, 25vh) repeat(2, 1fr)
+        grid-template-rows: repeat(4, 25vh)
+
+        button
+            margin: auto
+
+        // up
+        #btn-up-l
+            grid-column: 2 / 4
+            grid-row: 1 / 2
+        #btn-up-r
+            grid-column: 4 / 6
+            grid-row: 1 / 2
+
+        // middle
+        #btn-mid-l
+            grid-column: 1 / 3
+            grid-row: 2 / 4
+        #btn-mid-r
+            grid-column: 5 / 7
+            grid-row: 2 / 4
+
+        // down
+        #btn-down-l
+            grid-column: 2 / 4
+            grid-row: 4 / 5
+        #btn-down-r
+            grid-column: 4 / 6
+            grid-row: 4 / 5
+
     nav
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%,-50%)
+        grid-column: 3 / 5
+        grid-row: 2 / 4
 
         #one
-            width: 32rem
-            height: 32rem
-            background-color: $p-d
+            width: 100%
+            height: 100%
+            max-width: 40rem
+            max-height: 40rem
+            +flex
+            background-color: $p-l
 
         .circle
-            padding: 4rem
+            padding: 3.5rem // TODO: Adapt it proportionnaly
 
         .two
             background-color: $prim
 
             .three
-                background-color: $p-l
+                background-color: $p-d
 
                 .four
-                    background-color: $s-l
+                    background-color: $marine
 
 
 </style>

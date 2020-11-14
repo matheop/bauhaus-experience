@@ -80,62 +80,57 @@ i
 
 button
 	padding: 0.8rem 1.5rem
-	&:hover
-		+deep-shadow
+	cursor: pointer
+	// &:hover
+	// 	+deep-shadow
 
 	/* -- PRIMARY -- */
 	// outlined
 	&.p-outlined-btn
 		+btn(transparent, $prim, $m-rad, $prim)
 		&:hover
-			+btn($prim, $white, $m-rad, $prim)
+			+btn($prim, $white, $m-rad)
 		&.focus, &.active
 			+btn($p-l, $white, $m-rad, $prim)
 	// filled
 	&.p-filled-btn
 		+btn($prim, $white, $m-rad)
 		&:hover
-			+btn($p-d, $white, $m-rad)
+			+btn(transparent, $prim, $m-rad, $prim)
 		&.focus, &.active
 			+btn($p-l, $white, $m-rad)
-		&.disabled
-			+btn($p-trans, $white, $m-rad)
 
 	/* -- sec -- */
 	// outlined
 	&.s-outlined-btn
 		+btn(transparent, $sec, $m-rad, $sec)
 		&:hover
-			+btn($sec, $white, $m-rad, $sec)
+			+btn($sec, $white, $m-rad)
 		&.focus, &.active
 			+btn($s-l, $white, $m-rad, $sec)
 	// filled
 	&.s-filled-btn
 		+btn($sec, $white, $m-rad)
 		&:hover
-			+btn($s-d, $white, $m-rad)
+			+btn(transparent, $sec, $m-rad, $sec)
 		&.focus, &.active
 			+btn($s-l, $white, $m-rad)
-		&.disabled
-			+btn($s-trans, $white, $m-rad)
 
 	/* -- TERTIARY -- */
 	// outlined
 	&.t-outlined-btn
 		+btn(transparent, $ter, $m-rad, $ter)
 		&:hover
-			+btn($ter, $white, $m-rad, $ter)
+			+btn($ter, $white, $m-rad)
 		&.focus, &.active
 			+btn($t-l, $white, $m-rad, $ter)
 	// filled
 	&.t-filled-btn
 		+btn($ter, $white, $m-rad)
 		&:hover
-			+btn($t-d, $white, $m-rad)
+			+btn(transparent, $ter, $m-rad, $ter)
 		&.focus, &.active
 			+btn($t-l, $white, $m-rad)
-		&.disabled
-			+btn($t-trans, $white, $m-rad)
 
 .circle
 	border-radius: 50%

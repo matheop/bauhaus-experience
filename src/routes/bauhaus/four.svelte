@@ -12,8 +12,8 @@
 </script>
 
 <Seo
-	title="BVX | Three"
+	title="BVX | Four"
 	description="A Bauhaus Visual Experience"
-	url="https://www.bauhaus.fun/bauhaus/three" />
+	url="https://www.bauhaus.fun/bauhaus/four" />
 
 {#if intro}{/if}

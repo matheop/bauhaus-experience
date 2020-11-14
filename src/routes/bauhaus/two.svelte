@@ -1,11 +1,20 @@
 <script lang="ts">
+	/* Svelte */
 	import { onMount } from "svelte";
-
 	import { fade } from "svelte/transition";
+	/* Helpers */
+	import { DELAY } from "helpers/global";
+
+	import Seo from "components/templates/SEO.svelte";
 
 	let intro: boolean = false;
-	onMount(() => setTimeout(() => (intro = true), 1200));
+	onMount(() => setTimeout(() => (intro = true), DELAY));
 </script>
+
+<Seo
+	title="BVX | Two"
+	description="A Bauhaus Visual Experience"
+	url="https://www.bauhaus.fun/bauhaus/two" />
 
 {#if intro}
 	<div id="container" transition:fade>
