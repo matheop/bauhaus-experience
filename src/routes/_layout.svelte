@@ -1,12 +1,20 @@
 <script>
+	/* Sapper */
+	import { stores } from "@sapper/app";
+	const { page } = stores();
 	/* Stores */
 	import { media } from "../stores/media";
 
 	/* UI */
-	import Footer from "components/ui/Footer.svelte";
-	import Header from "components/ui/Header.svelte";
 	import LoadingPage from "components/ui/LoadingPage.svelte";
 	import Notifications from "components/ui/kit/Notifications.svelte";
+	import Redirection from "components/layouts/Redirection.svelte";
+
+	// export let segment: string | undefined;
+	let isHomescreen: boolean = false;
+	let isMenu: boolean = false;
+	$: isMenu = $page.path === "/bauhaus" ? true : false;
+	$: isHomescreen = $page.path === "/" ? true : false;
 
 	let windowWidth: number;
 	let siteReady: boolean = true;
@@ -22,6 +30,10 @@
 
 <!-- <Header />
 <Notifications /> -->
+
+{#if !isHomescreen}
+	<Redirection {isMenu} />
+{/if}
 
 <main>
 	<slot />

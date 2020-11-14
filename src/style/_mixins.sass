@@ -97,11 +97,13 @@
 
 /* ---- Liens ---- */
 
-=link-alike($color: $white)
+=link-alike($color: $grey-xl)
     text-decoration: none
     color: $color // TODO: Changer couleur
+    transition: text-decoration 0.3s ease
     &:hover
         text-decoration: underline
+        transition: text-decoration 0.3s ease
 
 // ┬ ┬┬  ┬┌─┬┌┬┐
 // │ ││  ├┴┐│ │ 

@@ -15,8 +15,8 @@
 
 <section>
 	{#if intro}
-		<h1 transition:fade>A Bauhaus Art Experience</h1>
-		<h4 in:fade={{ delay: 500 }} out:fade>Presented by matheop</h4>
+		<h1 transition:fade>A Visual<br />Bauhaus Art Experience</h1>
+		<h4 in:fade={{ delay: 500 }} out:fade>READY ?</h4>
 
 		<a in:fly={{ y: 200, delay: 1000, duration: 2000 }} out:fade href="/bauhaus">
 			<button class="p-outlined-btn"> Enter the Bauhaus </button>
@@ -34,6 +34,7 @@
 		h1
 			color: $ter
 			text-shadow: $t-d 1px 1px 2px
+			font-style: italic
 			+mb(2rem)
 
 		h4

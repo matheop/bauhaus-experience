@@ -81,8 +81,28 @@ i
 button
 	padding: 0.8rem 1.5rem
 	cursor: pointer
-	// &:hover
-	// 	+deep-shadow
+
+	/* -- "WHITE" (grey) -- */
+	&.w-outlined-btn, &.w-filled-btn, &.w-link // p-e bouger les pptés dans bhs/index si autre besoin
+		padding: 0.5rem 1rem
+		font-size: 90%
+	// outlined
+	&.w-outlined-btn
+		+btn(transparent, $grey-xl, $m-rad, $grey-xl)
+		&:hover
+			+btn($grey-xl, $marine, $m-rad)
+		&.focus, &.active
+			+btn($grey-d, $white, $m-rad, $grey-d)
+	// filled
+	&.w-filled-btn
+		+btn($grey-xl, $white, $m-rad)
+		&:hover
+			+btn(transparent, $grey-xl, $m-rad, $grey-xl)
+		&.focus, &.active
+			+btn($grey-xl, $white, $m-rad)
+	// link-alike
+	&.w-link
+		+link-alike
 
 	/* -- PRIMARY -- */
 	// outlined
