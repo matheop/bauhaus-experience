@@ -28,8 +28,7 @@
 	<LoadingPage />
 {/if}
 
-<!-- <Header />
-<Notifications /> -->
+<Notifications />
 
 {#if !isHomescreen}
 	<Redirection {isMenu} />

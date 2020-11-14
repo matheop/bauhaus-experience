@@ -1,11 +1,19 @@
 <script lang="ts">
-	import { fade, fly } from "svelte/transition";
-	import SEO from "components/templates/SEO.svelte";
+	/* Svelte */
 	import { onMount } from "svelte";
-	// import { notifications, Alert } from "notifications";
-	// import { onMount } from "svelte";
+	import { fade, fly } from "svelte/transition";
+	/* Stores */
+	import { notifications, Alert } from "notifications";
+	import SEO from "components/templates/SEO.svelte";
 
-	// onMount(() => notifications.add(new Alert("Hello", "valid", "world ?")));
+	const easteregg = () =>
+		notifications.add(
+			new Alert(
+				"Good Job !",
+				"success",
+				"You've just found the easter egg ! Want to talk ? reach me out at : <a class='notif-link' href='mailto:matheo.pierini1@gmail.com'>matheo.pierini1@gmail.com</a>"
+			)
+		);
 
 	let intro: boolean = false;
 	onMount(() => setTimeout(() => (intro = true), 1200));
@@ -15,7 +23,7 @@
 
 <section>
 	{#if intro}
-		<h1 transition:fade>A Visual<br />Bauhaus Art Experience</h1>
+		<h1 transition:fade on:click={easteregg}>A Visual<br />Bauhaus Art Experience</h1>
 		<h4 in:fade={{ delay: 500 }} out:fade>READY ?</h4>
 
 		<a in:fly={{ y: 200, delay: 1000, duration: 2000 }} out:fade href="/bauhaus">

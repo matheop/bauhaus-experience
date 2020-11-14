@@ -25,7 +25,9 @@
 				<div class="text">
 					<p>{alert.title}</p>
 					{#if alert.text !== undefined && alert.text !== ''}
-						<p class="subtitle">{alert.text}</p>
+						<p class="subtitle">
+							{@html alert.text}
+						</p>
 					{/if}
 				</div>
 				<i class="cross" on:click={() => notifications.remove(alert.id)} />
@@ -94,7 +96,7 @@
 					font-weight: bold
 
 					.subtitle
-						color: grey
+						color: $grey
 						font-weight: normal
 
 				.cross 
