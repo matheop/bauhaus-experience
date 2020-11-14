@@ -1,8 +1,9 @@
 <script lang="ts">
-
+	import Redirection from "./Redirection.svelte";
+	export let isMenu: boolean;
 </script>
 
-<footer>Footer.</footer>
+<Redirection {isMenu} />
 
 <style lang="sass">
 

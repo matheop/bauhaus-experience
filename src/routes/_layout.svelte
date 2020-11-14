@@ -9,6 +9,7 @@
 	import LoadingPage from "components/ui/LoadingPage.svelte";
 	import Notifications from "components/ui/kit/Notifications.svelte";
 	import Redirection from "components/layouts/Redirection.svelte";
+	import Footer from "components/layouts/Footer.svelte";
 
 	let isHomescreen: boolean = false;
 	let isMenu: boolean = false;
@@ -32,7 +33,7 @@
 <Notifications />
 
 {#if !isHomescreen}
-	<Redirection {isMenu} />
+	<Footer {isMenu} />
 {/if}
 
 <main>
