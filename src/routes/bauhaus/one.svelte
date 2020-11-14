@@ -11,10 +11,7 @@
 	onMount(() => setTimeout(() => (intro = true), DELAY));
 </script>
 
-<Seo
-	title="BVX | One"
-	description="A Bauhaus Visual Experience"
-	url="https://www.bauhaus.fun/bauhaus/one" />
+<Seo title="BVX | One" url="https://www.bauhaus.fun/bauhaus/one" />
 
 {#if intro}
 	<div id="container" transition:fade>

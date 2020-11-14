@@ -4,9 +4,9 @@
 	import { fade, fly } from "svelte/transition";
 	/* Stores */
 	import { notifications, Alert } from "notifications";
-	import SEO from "components/templates/SEO.svelte";
+	import Seo from "components/templates/SEO.svelte";
 
-	const easteregg = () =>
+	const easteregg = (): void =>
 		notifications.add(
 			new Alert(
 				"Good Job !",
@@ -16,10 +16,10 @@
 		);
 
 	let intro: boolean = false;
-	onMount(() => setTimeout(() => (intro = true), 1200));
+	onMount((): number => setTimeout(() => (intro = true), 1200));
 </script>
 
-<SEO />
+<Seo />
 
 <section>
 	{#if intro}
@@ -38,6 +38,7 @@
 		flex-direction: column
 		height: 100vh
 		text-align: center
+		+mx(2rem)
 
 		h1
 			color: $ter

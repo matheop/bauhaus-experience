@@ -21,10 +21,7 @@
 	$: console.log("$mouse:", $mouse);
 </script>
 
-<Seo
-	title="BVX | Menu"
-	description="A Bauhaus Visual Experience"
-	url="https://www.bauhaus.fun/bauhaus" />
+<Seo title="BVX | Menu" url="https://www.bauhaus.fun/bauhaus" />
 
 {#if intro}
 	<section id="grid-container">

@@ -10,11 +10,12 @@
 	import Notifications from "components/ui/kit/Notifications.svelte";
 	import Redirection from "components/layouts/Redirection.svelte";
 
-	// export let segment: string | undefined;
 	let isHomescreen: boolean = false;
 	let isMenu: boolean = false;
 	$: isMenu = $page.path === "/bauhaus" ? true : false;
-	$: isHomescreen = $page.path === "/" ? true : false;
+	$: isHomescreen = $page.path === "/" || $page?.error ? true : false;
+
+	// $: console.log("$page:", $page);
 
 	let windowWidth: number;
 	let siteReady: boolean = true;

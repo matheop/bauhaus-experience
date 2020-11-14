@@ -1,8 +1,8 @@
 <script lang="ts">
-	export let title = "TODO";
-	export let description = "TODO";
-	export let url = "TODO";
-	export let image = "TODO";
+	export let title = "VBX | Visual Experience";
+	export let description = "VBX is Visual Bauhaus Art Experience for curious people";
+	export let url = "https://www.bauhaus.fun";
+	export let image = "/favicon";
 	export let type = "website";
 </script>
 

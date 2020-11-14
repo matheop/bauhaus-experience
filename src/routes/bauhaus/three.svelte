@@ -11,9 +11,6 @@
 	onMount(() => setTimeout(() => (intro = true), DELAY));
 </script>
 
-<Seo
-	title="BVX | Three"
-	description="A Bauhaus Visual Experience"
-	url="https://www.bauhaus.fun/bauhaus/three" />
+<Seo title="BVX | Three" url="https://www.bauhaus.fun/bauhaus/three" />
 
 {#if intro}{/if}
