@@ -32,7 +32,7 @@
 			out:fade={{ duration: 400 }}
 			id="btn-up-l"
 			class="s-outlined-btn">
-			&nbsp;&nbsp;1&nbsp;&nbsp;
+			1
 		</button>
 		<button
 			on:click={() => discover('two')}
@@ -40,7 +40,7 @@
 			out:fade={{ delay: 200, duration: 400 }}
 			id="btn-up-r"
 			class="p-filled-btn">
-			&nbsp;&nbsp;2&nbsp;&nbsp;
+			2
 		</button>
 		<button
 			on:click={() => discover('three')}
@@ -48,7 +48,7 @@
 			out:fade={{ delay: 400, duration: 400 }}
 			id="btn-mid-r"
 			class="t-outlined-btn">
-			&nbsp;&nbsp;3&nbsp;&nbsp;
+			3
 		</button>
 		<button
 			on:click={() => discover('four')}
@@ -56,7 +56,7 @@
 			out:fade={{ delay: 600, duration: 400 }}
 			id="btn-down-r"
 			class="s-filled-btn">
-			&nbsp;&nbsp;4&nbsp;&nbsp;
+			4
 		</button>
 		<button
 			on:click={() => discover('five')}
@@ -64,7 +64,7 @@
 			out:fade={{ delay: 800, duration: 400 }}
 			id="btn-down-l"
 			class="p-outlined-btn">
-			&nbsp;&nbsp;5&nbsp;&nbsp;
+			5
 		</button>
 		<button
 			on:click={() => discover('six')}
@@ -72,7 +72,7 @@
 			out:fade={{ delay: 1000, duration: 400 }}
 			id="btn-mid-l"
 			class="t-filled-btn">
-			&nbsp;&nbsp;6&nbsp;&nbsp;
+			6
 		</button>
 
 		<nav in:fade={{ duration: 3500 }} out:fade on:mousemove={handleMousemove}>
@@ -89,13 +89,16 @@
 
 <style lang="sass">
     #grid-container
-        // position: relative
         display: grid
         grid-template-columns: repeat(2, 1fr) repeat(2, 25vh) repeat(2, 1fr)
         grid-template-rows: repeat(4, 25vh)
 
         button
             margin: auto
+            padding: 1rem
+            min-width: 4rem
+            min-height: 4rem
+            +circle
 
         // up
         #btn-up-l
