@@ -14,11 +14,11 @@
 		(await menu) ? goto("/") : goto("/bauhaus");
 
 	const renderRandomFigure = async (currentPath) => {
-		const path = currentPath.split("/");
-		const figure = path?.[2];
+		const path: Array<string> = currentPath.split("/");
+		const figure: string = path?.[2];
 		console.log("figure:", figure);
 		const randomFigure: Array<string> = ["one", "two", "three", "four", "five", "six"];
-		let item = figure;
+		let item: string = figure;
 		while (item === figure)
 			item = randomFigure[Math.floor(Math.random() * randomFigure.length)];
 		discover(item);
