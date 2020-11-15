@@ -8,12 +8,9 @@
 	/* UI */
 	import LoadingPage from "components/ui/LoadingPage.svelte";
 	import Notifications from "components/ui/kit/Notifications.svelte";
-	import Redirection from "components/layouts/Redirection.svelte";
 	import Footer from "components/layouts/Footer.svelte";
 
 	let isHomescreen: boolean = false;
-	let isMenu: boolean = false;
-	$: isMenu = $page.path === "/bauhaus" ? true : false;
 	$: isHomescreen = $page.path === "/" || $page?.error ? true : false;
 
 	// $: console.log("$page:", $page);
@@ -33,7 +30,7 @@
 <Notifications />
 
 {#if !isHomescreen}
-	<Footer {isMenu} />
+	<Footer />
 {/if}
 
 <main>
