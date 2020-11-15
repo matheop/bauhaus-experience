@@ -97,16 +97,6 @@
         button
             margin: auto
 
-        // random button
-        // #aside-btns-div
-        //     position: absolute
-        //     bottom: 1rem
-        //     right: 1rem
-        //     +flex-x
-
-        //     &:first-child
-        //         margin-right: 1rem
-
         // up
         #btn-up-l
             grid-column: 2 / 4

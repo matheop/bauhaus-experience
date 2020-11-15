@@ -1,19 +1,26 @@
 <script lang="ts">
 	/* Sapper */
-	import { goto } from "@sapper/app";
+	import { goto, stores } from "@sapper/app";
+	const { page } = stores();
 	/* Svelte */
 	import { fade } from "svelte/transition";
 	/* Helpers */
 	import { discover } from "helpers/redirection";
 
-	export let isMenu: boolean = false;
+	let isMenu: boolean = false;
+	$: isMenu = $page.path === "/bauhaus" ? true : false;
 
 	const redirect = async (menu: boolean): Promise<void> =>
 		(await menu) ? goto("/") : goto("/bauhaus");
 
-	const random = async () => {
-		const random: Array<string> = ["one", "two", "three", "four", "five", "six"];
-		const item = random[Math.floor(Math.random() * random.length)];
+	const renderRandomFigure = async (currentPath) => {
+		const path = currentPath.split("/");
+		const figure = path?.[2];
+		console.log("figure:", figure);
+		const randomFigure: Array<string> = ["one", "two", "three", "four", "five", "six"];
+		let item = figure;
+		while (item === figure)
+			item = randomFigure[Math.floor(Math.random() * randomFigure.length)];
 		discover(item);
 	};
 </script>
@@ -28,7 +35,7 @@
 		{isMenu ? 'Homescreen' : 'Menu'}
 	</button>
 	<button
-		on:click={random}
+		on:click={() => renderRandomFigure($page.path)}
 		in:fade={{ delay: 4000, duration: 400 }}
 		out:fade={{ duration: 400 }}
 		id="random-btn"
