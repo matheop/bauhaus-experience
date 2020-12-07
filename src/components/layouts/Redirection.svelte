@@ -13,7 +13,7 @@
 	const redirect = async (menu: boolean): Promise<void> =>
 		(await menu) ? goto("/") : goto("/bauhaus");
 
-	const renderRandomFigure = async (currentPath) => {
+	const renderRandomFigure = async (currentPath): Promise<void> => {
 		const path: Array<string> = currentPath.split("/");
 		const figure: string = path?.[2];
 		console.log("figure:", figure);
@@ -21,7 +21,7 @@
 		let item: string = figure;
 		while (item === figure)
 			item = randomFigure[Math.floor(Math.random() * randomFigure.length)];
-		discover(item);
+		await discover(item);
 	};
 </script>
 
@@ -46,9 +46,6 @@
 
 <style lang="sass">
     #aside-btns-div
-        position: absolute
-        bottom: 1rem
-        right: 1rem
         +flex-x
 
         &:first-child

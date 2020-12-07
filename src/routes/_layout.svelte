@@ -29,13 +29,13 @@
 
 <Notifications />
 
-{#if !isHomescreen}
-	<Footer />
-{/if}
-
 <main>
 	<slot />
 </main>
+
+{#if !isHomescreen}
+	<Footer />
+{/if}
 
 <!-- <Footer /> -->
 <style lang="sass" global>

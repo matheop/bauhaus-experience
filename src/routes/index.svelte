@@ -4,6 +4,7 @@
 	import { fade, fly } from "svelte/transition";
 	/* Stores */
 	import { notifications, Alert } from "notifications";
+	/* Components */
 	import Seo from "components/templates/SEO.svelte";
 
 	const easteregg = (): void =>

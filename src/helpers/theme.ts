@@ -24,10 +24,11 @@ export const info: string = "#031DA0";
 
 // Nuances de gris
 export const black: string = "#000000";
-export const blacktranparent: string = "#00000040"; // transparence 0.25;
-export const darkergrey: string = "#2A2A2A";
-export const darkgrey: string = "#7E7E7E";
+export const marine: string = "#001229";
+export const blackTranparent: string = "#00000040"; // transparence 0.25;
+export const greyXD: string = "#2A2A2A";
+export const greyD: string = "#7E7E7E";
 export const grey: string = "#C5C5C5";
-export const lightgrey: string = "#D9D9D9";
-export const lightergrey: string = "#EAEAEA";
+export const greyL: string = "#D9D9D9";
+export const greyXL: string = "#EAEAEA";
 export const white: string = "#FFFFFF";

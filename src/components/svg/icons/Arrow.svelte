@@ -3,11 +3,7 @@
 	export let direction: string = "right"; // left / up / down
 </script>
 
-<svg
-	class={`${direction}-direction`}
-	viewBox="0 0 10 18"
-	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
+<svg class={direction} viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
@@ -21,15 +17,15 @@
 	svg
 		transition: transform 0.5s
 
-	.left-direction
+	.left
 		transform: rotate(0.5turn)
 		transition: transform 0.5s
 
-	.up-direction
+	.up
 		transform: rotate(-0.25turn)
 		transition: transform 0.5s
 
-	.down-direction
+	.down
 		transform: rotate(0.25turn)
 		transition: transform 0.5s
 </style>
