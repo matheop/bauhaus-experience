@@ -131,7 +131,7 @@ button
 		&.focus, &.active
 			+btn($p-l, $white, $m-rad)
 
-	/* -- sec -- */
+	/* -- SECONDARY -- */
 	// outlined
 	&.s-outlined-btn
 		+btn(transparent, $sec, $m-rad, $sec)
@@ -162,6 +162,22 @@ button
 			+btn(transparent, $ter, $m-rad, $ter)
 		&.focus, &.active
 			+btn($t-l, $white, $m-rad)
+
+	/* -- WHITE -- */
+	// outlined
+	&.w-outlined-btn
+		+btn(transparent, $white, $m-rad, $white)
+		&:hover
+			+btn($white, $marine, $m-rad)
+		&.focus, &.active
+			+btn($grey-xl, $marine, $m-rad, $grey-xl)
+	// filled
+	&.w-filled-btn
+		+btn($white, transparent, $m-rad)
+		&:hover
+			+btn(transparent, $white, $m-rad, $white)
+		&.focus, &.active
+			+btn($t-l, transparent, $m-rad)
 
 .circle
 	+circle

@@ -15,9 +15,9 @@
 
 {#if intro}
 	<div id="container" transition:fade>
-		<div class="circle red" />
-		<div class="circle blue">
-			<div class="circle purple" />
+		<div class="circle down" />
+		<div class="circle up">
+			<div class="circle in" />
 		</div>
 	</div>
 {/if}
@@ -41,15 +41,15 @@
                 transform: rotate(360deg)
                 transition: 2s all ease
 
-            &.blue
-                background-color: #65B0AA
+            &.up
+                background-color: $white
                 overflow: hidden
-                .purple
+                .in
                     position: absolute
                     top: 19.5rem
-                    background-color: #5E4188
-            &.red
+                    background-color: $sec
+            &.down
                 bottom: 0
-                background-color: #D54927
+                background-color: $prim
 
 </style>

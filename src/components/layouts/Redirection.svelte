@@ -47,7 +47,4 @@
 <style lang="sass">
     #aside-btns-div
         +flex-x
-
-        &:first-child
-            margin-right: 1rem
 </style>

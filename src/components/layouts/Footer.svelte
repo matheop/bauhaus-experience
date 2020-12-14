@@ -47,6 +47,6 @@
 					margin-right: 2rem
 
 		aside
-			right: 1rem
+			right: 2rem
 
 </style>
