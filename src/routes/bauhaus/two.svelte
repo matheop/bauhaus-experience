@@ -40,6 +40,7 @@
             height: 100%
 
         .rect
+            +transition(all 1s ease)
             &.up
                 background-color: $prim
                 border-top-right-radius: 100rem
@@ -47,6 +48,7 @@
                 background-color: $grey-xl
 
         .semi-circle
+            +transition(all 1s ease)
             &.up, &.down
                 border-top-right-radius: 100rem
                 border-bottom-right-radius: 100rem
@@ -56,7 +58,23 @@
             &.down
                 background-color: $ter
 
+        &:hover
+            .rect
+                +transition(all 1s ease)
+                &.up
+                    background-color: $p-d
+                    border-top-right-radius: 0
+                    border-top-left-radius: 100rem
+                &.down
+                    border-bottom-right-radius: 100rem
+                    background-color: $grey-xd
 
-
-
+            .semi-circle
+                +transition(all 1s ease)
+                &.up
+                    background-color: $s-d
+                    transform: translateY(100%)
+                &.down
+                    background-color: $t-d
+                    transform: translateY(-100%)
 </style>

@@ -12,11 +12,11 @@
 	onMount(() => setTimeout(() => (intro = true), DELAY));
 
 	const element = [
-		{ id: "one", delay: 0 },
-		{ id: "two", delay: 250 },
-		{ id: "three", delay: 100 },
-		{ id: "four", delay: 450 },
-		{ id: "five", delay: 700 },
+		{ id: "one", delay: 0, rotate: 2 },
+		{ id: "two", delay: 250, rotate: 7 },
+		{ id: "three", delay: 100, rotate: 5 },
+		{ id: "four", delay: 450, rotate: 4 },
+		{ id: "five", delay: 700, rotate: 9 },
 	];
 </script>
 
@@ -26,7 +26,7 @@
 	<div id="grid">
 		{#each element as el}
 			<div id={el.id} class="shape" transition:fly={{ delay: el.delay, y: -500 }}>
-				<div class="circle">
+				<div class="circle" style="animation-duration: {el.rotate}s;">
 					<div class="semi-circle-{el.id}" />
 				</div>
 			</div>
@@ -50,22 +50,50 @@
 			width: 100%
 			height: 100%
 
+			&:hover
+				.circle
+					top: 2rem
+					+transition(top 1s ease)
+
 			.circle
 				position: absolute
-				bottom: 2rem
-				transform: translateX(-50%)
+				top: calc(100% - 10rem)
+				left: -4rem
 				width: 8rem
 				height: 8rem
 				background-color: $white
 				overflow: hidden
+				animation: rotate 5s infinite linear
+				+transition(all 0.7s linear)
 
-				.semi-circle-one
+				+screen-max-md
+					top: calc(100% - 8rem)
+					left: -3rem
+					width: 6rem
+					height: 6rem
+				
+				+screen-max-sm
+					top: calc(100% - 6rem)
+					left: -2rem
+					width: 4rem
+					height: 4rem
+
+				div[class^='semi-circle']
 					position: absolute
 					left: 50%
 					width: 100%
 					height: 100%
-					background-color: $t-l
 
+					&[class*='-one']
+						background-color: $t-l
+					&[class*='-two']
+						background-color: $prim
+					&[class*='-three']
+						background-color: $sec
+					&[class*='-four']
+						background-color: $black
+					&[class*='-five']
+						background-color: $grey-xl
 			&#one
 				grid-row: 1 / 5
 				grid-column: 2
@@ -91,4 +119,10 @@
 				grid-column: 6 / 7
 				background-color: $black
 				border: 0.1px solid $grey-xd
+
+	@-webkit-keyframes rotate
+		from
+    		-webkit-transform: rotate(0deg)
+		to
+    		-webkit-transform: rotate(359deg)
 </style>
