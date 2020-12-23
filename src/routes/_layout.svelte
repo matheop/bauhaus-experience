@@ -3,9 +3,8 @@
 	import { stores } from "@sapper/app";
 	const { page } = stores();
 	/* Stores */
-	import { media } from "../stores/media";
-
-	/* UI */
+	import { media } from "stores/media";
+	/* Components */
 	import LoadingPage from "components/ui/LoadingPage.svelte";
 	import Notifications from "components/ui/kit/Notifications.svelte";
 	import Footer from "components/layouts/Footer.svelte";

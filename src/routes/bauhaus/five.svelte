@@ -1,6 +1,7 @@
 <script lang="ts">
 	/* Svelte */
 	import { onMount } from "svelte";
+	import { fade } from "svelte/transition";
 	/* Helpers */
 	import { DELAY } from "helpers/global";
 
@@ -13,4 +14,6 @@
 
 <Seo title="BVX | Five" url="https://www.bauhaus.fun/bauhaus/five" />
 
-{#if intro}{/if}
+{#if intro}
+	<h1 class="soon" in:fade={{ duration: 4000 }}>Coming soon...</h1>
+{/if}
