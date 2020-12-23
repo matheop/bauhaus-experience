@@ -1,6 +1,7 @@
 <script lang="ts">
 	/* Svelte */
 	import { onMount } from "svelte";
+	import { fly } from "svelte/transition";
 	/* Helpers */
 	import { DELAY } from "helpers/global";
 
@@ -9,37 +10,27 @@
 
 	let intro: boolean = false;
 	onMount(() => setTimeout(() => (intro = true), DELAY));
+
+	const element = [
+		{ id: "one", delay: 0 },
+		{ id: "two", delay: 250 },
+		{ id: "three", delay: 100 },
+		{ id: "four", delay: 450 },
+		{ id: "five", delay: 700 },
+	];
 </script>
 
 <Seo title="BVX | Three" url="https://www.bauhaus.fun/bauhaus/three" />
 
 {#if intro}
 	<div id="grid">
-		<div id="one" class="shape">
-			<div class="circle">
-				<div class="semi-circle" />
+		{#each element as el}
+			<div id={el.id} class="shape" transition:fly={{ delay: el.delay, y: -500 }}>
+				<div class="circle">
+					<div class="semi-circle-{el.id}" />
+				</div>
 			</div>
-		</div>
-		<div id="two" class="shape">
-			<div class="circle">
-				<div class="semi-circle" />
-			</div>
-		</div>
-		<div id="three" class="shape">
-			<div class="circle">
-				<div class="semi-circle" />
-			</div>
-		</div>
-		<div id="four" class="shape">
-			<div class="circle">
-				<div class="semi-circle" />
-			</div>
-		</div>
-		<div id="five" class="shape">
-			<div class="circle">
-				<div class="semi-circle" />
-			</div>
-		</div>
+		{/each}
 	</div>
 {/if}
 
@@ -68,7 +59,7 @@
 				background-color: $white
 				overflow: hidden
 
-				.semi-circle
+				.semi-circle-one
 					position: absolute
 					left: 50%
 					width: 100%

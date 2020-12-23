@@ -1,7 +1,7 @@
 <script lang="ts">
 	/* Svelte */
 	import { onMount } from "svelte";
-	import { fade } from "svelte/transition";
+	import { fly } from "svelte/transition";
 	/* Helpers */
 	import { DELAY } from "helpers/global";
 
@@ -14,11 +14,11 @@
 <Seo title="BVX | Two" url="https://www.bauhaus.fun/bauhaus/two" />
 
 {#if intro}
-	<div id="container" transition:fade>
-		<div class="rect up" />
-		<div class="semi-circle up" />
-		<div class="rect down" />
-		<div class="semi-circle down" />
+	<div id="container">
+		<div class="rect up" transition:fly={{ duration: 1000, x: -1000 }} />
+		<div class="semi-circle up" transition:fly={{ delay: 200, y: -1000 }} />
+		<div class="rect down" transition:fly={{ delay: 500, y: 1000 }} />
+		<div class="semi-circle down" transition:fly={{ delay: 750, duration: 1000, x: 1000 }} />
 	</div>
 {/if}
 
